@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.text.InputType;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -34,7 +33,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText edEmail, edPass;
     Button btnLogin;
     CheckBox cbLogin,cbShowPass;
-    private String urlData = "http://192.168.1.11:8080/TracNghiemTiengAnh/checklogin.php";
+    public static String urlData = "http://192.168.1.10/English/";
+    public static String urlCheckAccount = urlData+"checkAccount.php";
+    public static String urlInsert = urlData+"insert.php";
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,7 +162,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(email.isEmpty() || pass.isEmpty()){
                     Toast.makeText(LoginActivity.this, "Vui lòng điền đầy đủ thông tin", Toast.LENGTH_SHORT).show();
                 }else{
-                    checkAccount(urlData);
+                    checkAccount(urlCheckAccount);
                 }
             }
         });
