@@ -25,17 +25,18 @@
         android:id="@+id/edtEmail"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="28dp"
+        android:autofillHints=""
         android:background="@drawable/botron"
         android:ems="10"
-        android:paddingLeft="10dp"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
+        android:paddingLeft="10dp"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/edtMatKhau"
@@ -54,15 +55,42 @@
         app:layout_constraintTop_toBottomOf="@+id/edtEmail"
         android:autofillHints="" />
 
+    <CheckBox
+        android:id="@+id/checkboxlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Remember password?"
+        app:layout_constraintBottom_toTopOf="@+id/btnDangNhap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.245"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtMatKhau"
+        app:layout_constraintVertical_bias="0.825"
+        tools:ignore="MissingConstraints" />
+
+    <CheckBox
+        android:id="@+id/checkboxshowpass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:text="Show Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtMatKhau" />
+
     <Button
         android:id="@+id/btnDangNhap"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/botron"
         android:text="@string/dangnhap"
         android:textColor="#597F8E"
-        android:background="@drawable/botron"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtMatKhau" />
 

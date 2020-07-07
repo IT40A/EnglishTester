@@ -7,9 +7,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle actionBarDrawerToggle;
+    TextView txtEmailLogin,txtUsernameLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setWidget();
+
+        getdataLogin();
+
 
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(MainActivity.this, drawer, toolbar, R.string.navigation_draw_open, R.string.navigation_draw_close);
@@ -62,10 +68,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void getdataLogin() {
+        //Nhận dữ liệu
+        Intent intent = getIntent();
+        Bundle bundle = intent.getBundleExtra("dulieu");
+        if(bundle!=null) {
+            String email = bundle.getString("email");
+            String pass = bundle.getString("pass");
+            //txtEmail.setText(email);
+            //txtEmailLogin.setText(""+email);
+        }
+
+
+    }
+
     void setWidget() {
         toolbar = findViewById(R.id.toolbar);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
+        txtEmailLogin = (TextView)findViewById(R.id.txtEmailnav);
+        txtUsernameLogin = (TextView)findViewById(R.id.txtUsernamenav);
 
     }
 
